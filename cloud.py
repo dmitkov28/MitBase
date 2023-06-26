@@ -1,9 +1,8 @@
 import matplotlib.pyplot as plt
-import streamlit
 from wordcloud import WordCloud
 
 
-def create_wordcloud(st: streamlit, headlines: list):
+def create_wordcloud(headlines: list):
     wordcloud = WordCloud(background_color="white", max_words=40).generate(
         " ".join([item for item in headlines])
     )
@@ -11,3 +10,5 @@ def create_wordcloud(st: streamlit, headlines: list):
     plt.imshow(wordcloud)
     plt.axis("off")
     return fig
+
+

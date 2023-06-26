@@ -7,13 +7,14 @@ gd = GdeltDoc()
 
 
 @st.cache_data
-def get_data(data_type: str, query: str, start_date: datetime, end_date: datetime):
+def get_data(data_type: str, query: str, start_date: datetime, end_date: datetime, country: list = None):
     start_date = start_date.strftime("%Y-%m-%d")
     end_date = end_date.strftime("%Y-%m-%d")
     f = Filters(
         keyword=query,
         start_date=start_date,
-        end_date=end_date
+        end_date=end_date,
+        country=country
     )
 
     data_types = {
